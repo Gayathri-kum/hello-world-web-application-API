@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+from datetime import datetime
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,7 +11,7 @@ def health():
     status = {
         "status": "OK",
         "version": "0.0.1",
-        "uptime": "up since 2020-08-04 08:00:05"
+        "uptime": datetime.now()
     }
     return jsonify(status)
 
